@@ -1,0 +1,26 @@
+# build output
+dist/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+src/pages/blog/markdown-style-guide.md
+src/pages/blog/first-post.md
+src/pages/blog/using-mdx.mdx
+src/pages/blog/how-to-build-a-rest-api-in-nodejs.mdx
+
+README.md

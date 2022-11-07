@@ -1,0 +1,208 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import type { Project } from "../types";
+
+// Data Fetching: List all Markdown posts in the repo.
+const projects = await Astro.glob<Project>("./project/**/*.md");
+const featuredProject = projects[0]!;
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .wrapper {
+        margin-top: 2em;
+        margin-bottom: 2em;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      @media (min-width: 750px) {
+        .hero {
+          height: 40vw;
+        }
+      }
+
+      .img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .grid {
+        display: grid;
+        gap: 2rem;
+      }
+
+      @media (min-width: 1200px) {
+        .grid {
+          grid-template-columns: 2fr;
+        }
+      }
+
+      .sectionTitle {
+        font-weight: 700;
+        font-size: var(--f-u8);
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+      }
+
+      .roles {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        font-size: var(--f-d1);
+      }
+
+      .role {
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+        font-weight: 900;
+        color: var(--t-bg);
+        background-color: var(--t-fg);
+        padding: 0.25em 0.5em;
+        z-index: 2;
+      }
+
+      @media (min-width: 750px) {
+        .role {
+          font-size: var(--f-u3);
+        }
+      }
+
+      .role:nth-of-type(1) .invert {
+        background-color: var(--c-red);
+      }
+
+      .role:nth-of-type(2) .invert {
+        background-color: var(--c-blue);
+      }
+
+      .role:nth-of-type(3) .invert {
+        background-color: var(--c-green);
+      }
+
+      .role:hover .invert {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      }
+
+      .invert {
+        position: absolute;
+        color: var(--t-fg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
+        transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
+      }
+
+      .desc {
+        font-size: var(--f-u1);
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+        color: black;
+        background-color: var(--c-blue);
+        padding: 0.25em 0.5em;
+      }
+
+      .bio {
+        line-height: 2;
+        margin-bottom: 2rem;
+      }
+
+      .bio > span:first-of-type {
+        line-height: 1;
+        margin-bottom: 0.5em;
+        display: block;
+        font-weight: 700;
+        font-size: var(--f-u4);
+      }
+
+      .buttonContainer {
+        text-align: center;
+        margin-top: 2em;
+      }
+      .title {
+        font-size: var(--f-u4-5);
+      }
+    </style>
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main class="wrapper">
+      <div class="hero">
+        <img
+          width="1600"
+          height="1131"
+          class="img"
+          src="https://i.ibb.co/ngGmgfY/143-A35-E8-425-B-4-A9-C-9231-6-A93-A8169-E94.jpg"
+          sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
+        />
+        <h1 class="title">
+          Hi! My name is Ron Jean-Francois, Im a Full Stack Engineer
+        </h1>
+        <div class="roles">
+          <span class="role"
+            >👨🏾‍💻 Developer <span class="invert">💻 Developer</span>
+          </span>
+          <span class="role"
+            >🖋️ Writer <span class="invert">✒️ Writer</span>
+          </span>
+          <p class="desc">Tech and Code Enthusiast, Basketball Fanatic</p>
+        </div>
+      </div>
+      <div class="grid">
+        <section>
+          <h3 class="sectionTitle">Selected Work</h3>
+          <PortfolioPreview project={featuredProject} />
+          <div class="buttonContainer">
+            <a href="/projects/" class="button">View All</a>
+          </div>
+        </section>
+        <section>
+          <h3 class="sectionTitle">About Me</h3>
+          <p class="bio">
+            <span>Hello!</span> I&#39m Ron, and this is my website. It was made using{
+              " "
+            }
+            <a
+              href="https://github.com/withastro/astro"
+              target="_blank"
+              rel="nofollow"
+            >
+              Astro</a
+            >, a new way to build static sites.
+          </p>
+          <p>
+            <a href="/about" class="button">Read more</a>
+          </p>
+        </section>
+      </div>
+      <!-- <p>
+        Looking for a blog template with a bit more personality? Check out <a
+          href="https://github.com/Charca/astro-blog-template"
+          >astro-blog-template
+        </a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+      </p> -->
+    </main>
+    <Footer />
+  </body>
+</html>

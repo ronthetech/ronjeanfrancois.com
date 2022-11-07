@@ -1,0 +1,96 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "Intro to Next.js"
+description: "Introductory guide on setting up and building an application using Next.js"
+pubDate: "Nov 03 2022"
+---
+
+### This is an introductory guide on how to set up and build an application using Next.js.
+
+[Next.js](https://nextjs.org/) is a web framework that supports building full stack applications.
+
+#### Create Next.js app
+
+`create-next-app` is a CLI tool that allows us to start a new Next.js project that is already set up for us. It is officially maintained by the creators of Next.js. You can create a Next.js app with the default template using npm by running the following command:
+
+```sh
+npx create-next-app@latest
+```
+
+Alternatively, you can use yarn or pnpm with the following commands:
+
+#### using yarn
+
+```sh
+yarn create next-app
+```
+
+#### using pnpm
+
+```sh
+pnpm create next-app
+```
+
+These are optional, pick npm, yarn, or pnpm whichever you prefer. You just have to remember to stick to the tool that you pick now throughout the rest of this project. For this guide I will be using npm.
+
+#### Create Next.js app with TypeScript
+
+You also have the option to install the default template that uses TypeScript instead of JavaScript. I recommend this option if you know TypeScript or would like to learn more about the typesafety it provides. Use the `--typescript` or `--ts` flag to enable TypeScript. For this guide I will be using TypeScript.
+
+```sh
+npx create-next-app@latest --typescript
+```
+
+#### Initial Project Setup
+
+You will be asked to install the latest version of `create-next-app` which is `13.0.1` at the time of writing this post. Then, enter a name for your project and npm will create your project in a folder with that name. The dependencies we need to get started will be installed automatically.
+
+![0_install_next_with_typescript](https://user-images.githubusercontent.com/105710107/200094864-bbbca895-734b-4234-b656-b0bd65d98d6d.png)
+
+#### Open Project in Code Editor
+
+Now we can open the project in our code editor of choice! For this guide I will be using [Microsft Visual Studio Code](https://code.visualstudio.com/).
+
+![1_initial_project](https://user-images.githubusercontent.com/105710107/200095365-6306f361-9249-4888-b61c-2277cb4ff6da.png)
+
+You can now preview your app by opening a new terminal and running the command:
+
+```sh
+npm run dev
+```
+
+This will start the dev server on `localhost:3000`
+
+![2_start_dev_server](https://user-images.githubusercontent.com/105710107/200095480-98820274-bd39-4064-b3ae-0a89a97c27bc.png)
+
+You can navigate to `http://localhost:3000` in a browser and be able to view your app running. Any changes you make to your files and save will cause the server to restart, so that you can see updates as you make them! This is enabled because of Next.js [Fast Refresh](https://nextjs.org/docs/basic-features/fast-refresh).
+
+#### Default Next.js Setup
+
+![3_base_project](https://user-images.githubusercontent.com/105710107/200095516-4f9de23c-84b7-47db-be8d-91fec929dcda.png)
+
+The page you are currently viewing is rendered by the code in `\pages\index.tsx`. The `pages` directory associates routes with file names. `\pages\index.tsx` is mapped to `https://<your-domain>/` or the index, while if we create a new file `\pages\prices.tsx` it will be mapped to `https://<your-domain>/prices`.
+
+#### Basic Page in Next.js
+
+Next.js focuses on the idea of pages, using them as React Components that are exported from the `pages` directory.
+
+```js
+export default function Page() {
+  return <div>This is a Page!</div>;
+}
+```
+
+You can also structure your page in different way.
+
+```js
+function Page() {
+  return <div>This is a Page!</div>;
+}
+
+export default Page;
+```
+
+#### Conclusion
+
+This is the base setup for a Next.js app built using `create-next-app`. The CLI tool allows you to start working on features and adding integrations to make a deployment ready application in a short amount of time. Try `create-next-app` in your next application - no pun intended - and let me know how it goes! You can find me on: [Twitter](https://twitter.com/ronjtech) or [LinkedIn](https://www.linkedin.com/in/ronjf/) or [Github](https://github.com/ronthetech)
