@@ -4,6 +4,7 @@ title: "About Me"
 description: "A little dive into my background and passions, hobbies, etc."
 updatedDate: "November 06 2022"
 heroImage: "https://i.ibb.co/NF8d1fb/E8-EEA83-B-C4-C2-49-D0-B24-E-2-EB11-B4-F04-B7.jpg"
+alt: "a bridge and a mountain in the distance viewed from another, smaller bridge"
 ---
 
 My first experience with programming was in a class in highschool where I designed a fan page for my favorite basketball player. It wasn't much but the ability to create and customize a website really intrigued me and I've been hooked to programming ever since!
