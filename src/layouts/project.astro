@@ -53,7 +53,7 @@ const { content } = Astro.props;
         font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 0.0625em;
-        color: mediumblue;
+        color: black;
       }
 
       .leadIn {
@@ -86,6 +86,10 @@ const { content } = Astro.props;
         text-align: center;
         margin-top: 3rem;
       }
+
+      .btn {
+        color: var(--c-red);
+      }
     </style>
   </head>
   <body>
@@ -98,11 +102,14 @@ const { content } = Astro.props;
         {content.tags.map((t) => <span class="tag">{t}</span>)}
         <h3 class="tagline">{content.description}</h3>
         <h6 class="tagline">{content.link}</h6>
-        <a href={content.link} class="button" rel="noopener" target="_blank"
+        <a href={content.link} class="button btn" rel="noopener" target="_blank"
           >Link</a
         >
-        <a href={content.github} class="button" rel="noopener" target="_blank"
-          >Github</a
+        <a
+          href={content.github}
+          class="button btn"
+          rel="noopener"
+          target="_blank">Github</a
         >
       </div>
     </div>
