@@ -31,6 +31,15 @@ const {
         border-top: 1px solid #ddd;
         margin: 1rem 0;
       }
+      .return {
+        font-size: 1.25em;
+        margin: 2rem 0 0 0;
+        text-decoration: none;
+      }
+      .return:hover,
+      .return:focus {
+        text-decoration: underline;
+      }
     </style>
   </head>
 
@@ -55,6 +64,7 @@ const {
         <hr />
         <slot />
       </article>
+      <a href="/blog" class="return">&lt;&#45; Back to Ron&#39s Blog</a>
     </main>
     <Footer />
   </body>
