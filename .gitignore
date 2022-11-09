@@ -23,6 +23,8 @@ pnpm-debug.log*
 src/pages/blog/markdown-style-guide.md
 src/pages/blog/first-post.md
 src/pages/blog/using-mdx.mdx
+src/pages/blog/intro-to-nextjs-13.mdx
 src/pages/blog/how-to-build-a-rest-api-in-nodejs.mdx
+src/pages/blog/blank.mdx
 
 README.md
