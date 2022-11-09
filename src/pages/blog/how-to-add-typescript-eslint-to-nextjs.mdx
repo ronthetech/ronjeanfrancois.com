@@ -1,0 +1,50 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "How to Add TypeScript ESLint to Next.js"
+description: "Introductory guide on adding TypeScript ESLint to your Next.js application"
+pubDate: "Nov 06 2022"
+---
+
+## {frontmatter.description}
+
+### Create Next App
+
+To start we will use `create-next-app` with the TypeScript flag to start a project using [Next.js](https://nextjs.org/docs/getting-started) and [TypeScript](https://www.typescriptlang.org/), which I recommend. I advocate for TypeScript because I truly believe it helps make your project better, more secure and technically sound when you use typesafety. The CLI will also ask you about using [ESLint](https://eslint.org/), another recommended option for improving your development process. ESLint helps to find and fix problems with JavaScript Code. But since we are using TypeScript, later we will also add [TypeScript - ESLint](https://typescript-eslint.io/), which allows ESLint to support TypeScript.
+
+### Terminal
+
+![Create Next App with TypeScript and ESLint](https://ronthetech.github.io/image-repo/typescript_eslint_and_next_ts/0.png)
+
+Once the dependencies are downloaded, you can open the project in your code editor of choice. For this guide I will be using [Microsoft Visual Studio Code](https://code.visualstudio.com/).
+
+### Initial Project Structure
+
+![Initial Project Structure](https://ronthetech.github.io/image-repo/typescript_eslint_and_next_ts/1.png)
+
+### Add TypeScript ESLint
+
+Open a new terminal in your IDE and run the following command to add TypeScript ESLint and its dependencies to your project.
+
+```sh
+npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+
+As soon as the dependencies are done installing, you should update the settings in the `.eslintrc.json` file that `create-next-app` created for you, to include the dependencies that were just added.
+
+#### Default ESLint Configuration
+
+![Default ESLint Config](https://ronthetech.github.io/image-repo/typescript_eslint_and_next_ts/2.png)
+
+#### Updated ESLint Configuration
+
+![Updated ESLint Config](https://ronthetech.github.io/image-repo/typescript_eslint_and_next_ts/3.png)
+
+Now we can test that our setup works by running the command `next lint` to lint our project with the new configuration.
+
+![Run ESlint](https://ronthetech.github.io/image-repo/typescript_eslint_and_next_ts/4.png)
+
+### Success!
+
+You have successfully added TypeScript ESLint to your Next.js application. You can find more recommended settings for your setup in the [Next.js Docs](https://nextjs.org/docs/basic-features/eslint). There you can find different options for your configuration that may be more suited to the specific needs of your application, such as using [linting custom directories/files](https://nextjs.org/docs/basic-features/eslint#linting-custom-directories-and-files), [disabling rules](https://nextjs.org/docs/basic-features/eslint#disabling-rules), or [using it with other tools](https://nextjs.org/docs/basic-features/eslint#usage-with-other-tools).
+
+Try adding TypeScript ESLint to your next application and let me know how it goes! You can find me on: [Twitter](https://twitter.com/ronjtech), [LinkedIn](https://www.linkedin.com/in/ronjf/) or [Github](https://github.com/ronthetech)
