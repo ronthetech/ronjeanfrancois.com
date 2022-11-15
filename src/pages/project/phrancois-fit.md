@@ -7,7 +7,6 @@ img: https://ronthetech.github.io/image-repo/home_page_logged_out.png
 description: |
   You can plan out your workouts by saving individual exercises. Features a reminder for how long ago the particular exercise was added and the option to delete the exercise after you have completed it.
 tags:
-  - dev
   - typescript
   - prisma
   - next.js
