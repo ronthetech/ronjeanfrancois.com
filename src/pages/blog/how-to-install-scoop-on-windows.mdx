@@ -1,0 +1,28 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "How to Install Scoop on Windows"
+description: "Introductory guide on installing Scoop on Windows"
+pubDate: "Nov 01 2022"
+---
+
+## {frontmatter.description}
+
+<a target="_blank" href="https://scoop.sh/" rel="noreferrer">Scoop</a> is a command-line installer for Windows machines.
+
+To install Scoop you will need Powershell version 5.1 or later. You can run the following commands in a Powershell Terminal to install Scoop:
+
+```sh
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
+# ^Optional: Needed to run a remote script the first time
+> irm get.scoop.sh | iex
+```
+
+Scoop has a <a href="https://github.com/ScoopInstaller/Install#readme" target="_blank" rel="noreferrer">detailed Installer's README.md</a> if you are interested in an <a href="https://github.com/ScoopInstaller/Install#advanced-installation" target="_blank" rel="noreferrer">advanced installation</a>.
+### Result of Installation
+
+![Installing Scoop using Powershell](https://ronthetech.github.io/image-repo/tools/scoop-install.png)
+
+Scoop makes a **shim** for each terminal application in the `~\scoop\shims` directory. These are like command-line shortcuts that can be accessed in your PATH. Scoop also makes a program shortcut in the 'Scoop Apps' Start menu folder for every graphical application that you install. This is an important distinction that helps you keep track of where your tools are located.
+
+Try Scoop to install tools on your machine or download packages in your next application and let me know how it goes! You can find me on: <a href="https://github.com/ronthetech" target="_blank" >Twitter</a>, <a href="https://github.com/ronthetech" target="_blank">LinkedIn</a>, or<a href="https://github.com/ronthetech" target="_blank">
+Github</a>
