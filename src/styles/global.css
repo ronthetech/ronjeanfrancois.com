@@ -7,7 +7,7 @@
 :root {
   /* Colors */
   --c-black: #05091e;
-  --c-blue: #43d1eb;
+  --c-blue: #817ae7;
   --c-gray: #90aab7;
   --c-green: #3cbb7e;
   --c-pink: #ffb8d9;
@@ -131,10 +131,13 @@ blockquote {
 
 .button {
   display: inline-block;
-  border: 3px solid currentColor;
+  background-color: rgba(112, 128, 144, 0.7);
+  border: 1px solid currentColor;
   padding: 0.5em 1em;
   font-weight: 700;
   text-transform: uppercase;
+  border-radius: 1rem;
+  text-decoration: none;
 }
 
 .wrapper {
