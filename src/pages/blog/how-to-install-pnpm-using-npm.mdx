@@ -1,0 +1,39 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "How to Install pnpm"
+description: "Guide on how to install pnpm"
+pubDate: "Nov 02 2022"
+---
+
+## {frontmatter.description}
+pnpm (Performant npm) was designed with the purpose of making it easier to download dependencies for your projects without having to worry about using up valuable disk space, while also making the installation faster. You have several options for installing pnpm on your machine.
+
+### Installing pnpm using npm
+
+```sh
+npm i -g pnpm
+```
+
+### Installing pnpm using Homebrew
+
+```sh
+brew install pnpm
+```
+
+### Installing pnpm using Scoop
+
+```sh
+scoop install nodejs-lts pnpm
+```
+
+If you don't have <a href="https://scoop.sh/" target="_blank" rel="noreferrer">Scoop</a> installed, you can <a href="/blog/how-to-install-scoop-on-windows">read my post</a> to learn how to install it.
+
+### Verify the Installation
+
+Now we should verify the installation was successful by checking the version.
+
+```sh
+pnpm --version
+```
+
+The response should be the current version of pnpm you have just installed on your machine.
