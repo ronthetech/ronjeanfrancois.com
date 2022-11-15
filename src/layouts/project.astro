@@ -49,7 +49,8 @@ const { content } = Astro.props;
       }
 
       .title {
-        font-size: var(--f-u10);
+        font-size: var(--f-u7);
+        background-color: rgba(112, 128, 144, 0.7);
         font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 0.0625em;
@@ -65,7 +66,7 @@ const { content } = Astro.props;
 
       .tagline {
         font-weight: 300;
-        font-size: var(--f-u3);
+        font-size: var(--f-u2);
         line-height: 1.5;
         color: var(--c-blue);
       }
@@ -100,7 +101,7 @@ const { content } = Astro.props;
     <div class="leadIn">
       <div class="wrapper">
         {content.tags.map((t) => <span class="tag">{t}</span>)}
-        <h3 class="tagline">{content.description}</h3>
+        <h2 class="tagline">{content.description}</h2>
         <a href={content.link} class="button btn" rel="noopener" target="_blank"
           >Link</a
         >
