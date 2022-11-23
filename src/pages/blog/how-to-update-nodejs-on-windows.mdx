@@ -1,0 +1,80 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "How to Install and Update Node.js on Windows"
+description: "Introductory guide on installing and updating Node.js on Windows using nvm-windows."
+pubDate: "Oct 12 2022"
+---
+
+## {frontmatter.description}
+
+## Check Current Node.js Version
+
+In this guide I will walk you through getting Nodejs setup on your Windows machine. While creating applications, you may need to switch between the different versions of Node.js that are using. While NPM (Node Package Manager) is responsible for managing the different packages that you're downloading, NVM - (Node Version Manager) is used for taking care of which version of Node.js that you're using. NVM only supports macOS/Linux so we will be using the alternative <a href="https://github.com/coreybutler/nvm-windows" target="_blank">nvm-windows</a>.
+
+## Install NVM For Windows
+
+Install the nvm-windows through one of the provided methods, like with the installer or by downloading and extracting it from a zipped file. You can find nvm-windows on <a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank">Github</a>, where they have a popular and well supported repository for the project.
+
+## Check Current Node.js Version
+
+First things first, lets check what our current version of Node.js is before we update it.
+
+```sh
+> node -v
+```
+
+The response should be the current installed version of Node.js. `vx.x.x`.
+
+![Node Version](https://ronthetech.github.io/image-repo/nodejs/0.png)
+
+## Check Available Node.js versions
+
+If you want to see a list of the versions of node that are available on your system you can do so by running:
+
+```sh
+> nvm list
+```
+
+### Example: 
+
+![List Node Versions](https://ronthetech.github.io/image-repo/nodejs/1.png)
+
+## Install Node.js LTS version
+
+Running the following command will install the recommended LTS (Long Term Support) version of Node.js.
+
+```sh
+> nvm install lts
+```
+
+### Example: 
+
+![Install Node LTS Version](https://ronthetech.github.io/image-repo/nodejs/2.png)
+
+Alternatively, you can install the latest version using `nvm install latest`.
+
+## Use Specific Node.js Version
+
+Now we instruct nvm to use the new version of Node.js that we have just downloaded.
+
+```sh
+> nvm use x.x.x
+```
+
+### Example: 
+
+![Use New Node Version](https://ronthetech.github.io/image-repo/nodejs/3.png)
+
+## Verify Current Node.js Version
+
+The response should be the new installed LTS version of Node.js. `vx.x.x`.
+
+```sh
+> node -v
+```
+
+### Example: 
+
+![New Node Version](https://ronthetech.github.io/image-repo/nodejs/4.png)
+
+Try using nvm-windows to update your current versions of Node.js and npm or to install it on your new Windows machine and let me know how it goes! You can find me on: <a href="https://twitter.com/ronjtech" target="_blank" >Twitter</a>, <a href="https://www.linkedin.com/in/ronjf/" target="_blank">LinkedIn</a>, or <a href="https://github.com/ronthetech" target="_blank">Github</a>
