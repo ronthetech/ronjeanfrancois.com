@@ -68,7 +68,7 @@ body {
 	font-family: Verdana, sans-serif;
 	margin: auto;
 	padding: 18px;
-	max-width: 65ch;
+	max-width: 48rem;
 	text-align: left;
 	background-color: var(--c-dark);
 	word-wrap: break-word;
