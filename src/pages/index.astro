@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro"
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import PortfolioPreview from "../components/PortfolioPreview.astro"
+import TechPreview from "../components/TechPreview.astro"
 import { SITE_DESCRIPTION, SITE_TITLE } from "../config"
 import type { Project } from "../types"
 
@@ -176,6 +177,10 @@ const featuredProject = projects[0]!
 					<div class="buttonContainer">
 						<a href="/projects/" class="button" rel="prefetch">View All</a>
 					</div>
+				</section>
+				<section id="technology">
+					<h2 class="sectionTitle">Technologies I Use</h2>
+					<TechPreview />
 				</section>
 				<section id="section-about">
 					<h2 class="sectionTitle">About Me</h2>
