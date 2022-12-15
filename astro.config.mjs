@@ -1,9 +1,12 @@
-import mdx from "@astrojs/mdx"
-import sitemap from "@astrojs/sitemap"
-import { defineConfig } from "astro/config"
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import { defineConfig } from "astro/config";
+
+// https://astro.build/config
+import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://www.ronjeanfrancois.com/",
-	integrations: [mdx(), sitemap()],
-})
+  site: "https://www.ronjeanfrancois.com/",
+  integrations: [mdx(), sitemap(), prefetch()]
+});
