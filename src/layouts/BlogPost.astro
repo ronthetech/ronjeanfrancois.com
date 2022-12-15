@@ -27,26 +27,13 @@ const {
 				font-size: 2em;
 				margin: 0.25em 0 0;
 			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-			.return {
-				font-size: 1.25em;
-				margin: 2rem 0 0 0;
-				text-decoration: none;
-			}
-			.return:hover,
-			.return:focus {
-				text-decoration: underline;
-			}
 		</style>
 	</head>
 
 	<body>
 		<Header />
 		<main>
-			<article>
+			<article class="mb-4">
 				{
 					heroImage && (
 						<img width={720} height={360} src={heroImage} alt={alt} />
@@ -61,11 +48,14 @@ const {
 						</div>
 					)
 				}
-				<hr />
+				<hr class="my-4 border-t border-t-white" />
 				<slot />
 			</article>
-			<a href="/blog" class="return" id="back-to-blog" rel="prefetch"
-				>&lt;&#45; Back to Ron&#39s Blog</a
+			<a
+				href="/blog"
+				class="text-lg lg:text-xl no-underline hover:underline focus:underline mt-8"
+				id="back-to-blog"
+				rel="prefetch">&lt;&#45; Back to Ron&#39s Blog</a
 			>
 		</main>
 		<Footer />
