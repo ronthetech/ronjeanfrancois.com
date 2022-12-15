@@ -16,25 +16,6 @@ const { content } = Astro.props
 	<head>
 		<BaseHead title={content.title} description={content.description} />
 		<style>
-			.hero {
-				padding: 8rem;
-				display: flex;
-				background-color: var(--t-fg);
-				background-repeat: no-repeat;
-				background-size: cover;
-				min-height: 25vw;
-				color: white;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.tag {
-				margin-left: 0.5em;
-				margin-right: 0.5em;
-				text-transform: uppercase;
-			}
-
 			.tag:nth-of-type(1n) {
 				color: var(--c-green);
 			}
@@ -48,76 +29,54 @@ const { content } = Astro.props
 				color: var(--c-pink);
 			}
 
-			.title {
-				font-size: var(--f-u5);
-				background-color: rgba(112, 128, 144, 0.7);
-				font-weight: 900;
-				text-transform: uppercase;
-				letter-spacing: 0.0625em;
-				color: black;
-				text-align: center;
-			}
-
-			.leadIn {
-				padding-top: 4em;
-				color: var(--t-bg);
-				background-color: var(--t-fg);
-				text-align: center;
-			}
-
-			.tagline {
-				font-weight: 300;
-				font-size: var(--f-u2);
-				line-height: 1.5;
-				color: var(--c-blue);
-			}
-
 			.content {
 				font-size: var(--f-u1);
 				line-height: 2.2;
 				max-width: 50em;
 				margin: auto;
 			}
-
-			.wrapper {
-				padding-bottom: 4em;
-				margin-bottom: 4em;
-			}
-
-			.foot {
-				text-align: center;
-				margin-top: 3rem;
-			}
-
-			.btn {
-				color: var(--c-white);
-			}
 		</style>
 	</head>
 	<body>
 		<Header />
-		<div style={`background-image:url(${content.img})`} class="hero">
-			<h1 class="title">{content.title}</h1>
+		<div
+			style={`background-image:url(${content.img})`}
+			class="text-white flex flex-col items-center justify-center p-32 min-h-[25vw] bg-[#05091e] bg-no-repeat bg-cover">
+			<h1
+				class="text-black text-center text-3xl tracking-wider uppercase font-black bg-[#708090b3]">
+				{content.title}
+			</h1>
 		</div>
-		<div class="leadIn">
-			<div class="wrapper">
-				{content.tags.map((t) => <span class="tag">{t}</span>)}
-				<h2 class="tagline">{content.description}</h2>
-				<a href={content.link} class="button btn" rel="noopener" target="_blank"
-					>Link</a
+		<div class="text-center pb-16 text-white bg-[#05091e]">
+			<div class="mb-16 pb-16">
+				<div class="flex flex-wrap justify-around lg:px-16 my-4">
+					{
+						content.tags.map((t) => (
+							<span class="tag uppercase text-lg mx-3 lg:text-2xl">{t}</span>
+						))
+					}
+				</div>
+				<h2 class="font-light text-[#817ae7] text-lg lg:text-2xl">
+					{content.description}
+				</h2>
+				<a
+					href={content.link}
+					class="button text-white mt-4"
+					rel="noreferrer noopener"
+					target="_blank">Link</a
 				>
 				<a
 					href={content.github}
-					class="button btn"
-					rel="noopener"
+					class="button text-white mt-4"
+					rel="noreferrer noopener"
 					target="_blank">Github</a
 				>
 			</div>
 		</div>
-		<div class="wrapper">
+		<div class="mb-16 pb-16">
 			<div class="content"><slot /></div>
 		</div>
-		<div class="foot">
+		<div class="text-center mt-12">
 			<a href="/projects" class="button" rel="prefetch">View More</a>
 		</div>
 		<Footer />
