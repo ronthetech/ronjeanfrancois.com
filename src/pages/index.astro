@@ -17,49 +17,13 @@ const featuredProject = projects[0]!
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
-			.wrapper {
-				margin-top: 2em;
-				margin-bottom: 2em;
-			}
-
-			.hero {
-				position: relative;
-				overflow: visible;
-			}
-
-			.img {
-				display: block;
-				width: 100%;
-				height: auto;
-			}
-
-			.grid {
-				display: grid;
-				gap: 2rem;
-			}
-
 			@media (min-width: 1200px) {
 				.grid {
 					grid-template-columns: 2fr;
 				}
 			}
 
-			.sectionTitle {
-				font-weight: 700;
-				font-size: var(--f-u8);
-				margin-top: 4rem;
-				margin-bottom: 2rem;
-			}
-
-			.roles {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.5em;
-				font-size: var(--f-d1);
-			}
-
 			.role {
-				position: relative;
 				display: inline-block;
 				white-space: nowrap;
 				font-weight: 900;
@@ -69,127 +33,97 @@ const featuredProject = projects[0]!
 				z-index: 2;
 			}
 
-			@media (min-width: 750px) {
-				.role {
-					font-size: var(--f-u3);
-				}
-			}
-
-			.role:nth-of-type(1) .invert {
+			.role:nth-of-type(1) .inverted {
 				background-color: var(--c-red);
 			}
 
-			.role:nth-of-type(2) .invert {
+			.role:nth-of-type(2) .inverted {
 				background-color: var(--c-blue);
 			}
 
-			.role:nth-of-type(3) .invert {
+			.role:nth-of-type(3) .inverted {
 				background-color: var(--c-green);
 			}
 
-			.role:hover .invert {
+			.role:hover .inverted {
 				clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 			}
 
-			.invert {
-				position: absolute;
-				color: var(--t-fg);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				width: 100%;
-				height: 100%;
-				top: 0;
-				left: 0;
-				pointer-events: none;
+			.inverted {
 				clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
 				transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
-			}
-
-			.desc {
-				font-size: var(--f-u2);
-				margin-top: 1.5rem;
-				margin-bottom: 0;
-				color: black;
-				background-color: darkseagreen;
-				padding: 0.25em 0.5em;
-			}
-
-			.bio {
-				line-height: 2;
-				margin-bottom: 2rem;
-			}
-
-			.bio > span:first-of-type {
-				line-height: 1;
-				margin-bottom: 0.5em;
-				display: block;
-				font-weight: 700;
-				font-size: var(--f-u4);
-			}
-
-			.buttonContainer {
-				text-align: center;
-				margin-top: 2em;
-			}
-			.title {
-				font-size: var(--f-u4-5);
-			}
-			@media (max-width: 750px) {
-				.title {
-					font-size: var(--f-u3);
-				}
 			}
 		</style>
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<main class="wrapper">
-			<div class="hero">
+		<main class="wrapper my-8">
+			<div class="relative overflow-visible">
 				<img
 					width="1600"
 					height="1131"
-					class="img"
+					class="block w-full h-auto"
 					alt="sun setting over an amateur dragstrip for racing cars"
 					src="https://i.ibb.co/ngGmgfY/143-A35-E8-425-B-4-A9-C-9231-6-A93-A8169-E94.jpg"
 					sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
 				/>
-				<h1 class="title">
+				<h1 class="text-2xl lg:text-3xl mt-4 font-medium">
 					Hi! My name is Ron Jean-Francois, Im a Full Stack Engineer
 				</h1>
-				<div class="roles">
-					<span class="role"
-						>👨🏾‍💻 Engineer <span class="invert">💻 Engineer</span>
+				<div class="roles flex flex-wrap gap-4 mt-4">
+					<span class="role text-lg lg:text-2xl relative"
+						>👨🏾‍💻 Engineer <span
+							class="inverted absolute flex justify-center items-center text-black w-full h-full top-0 left-0 pointer-events-none"
+							>💻 Engineer</span
+						>
 					</span>
-					<span class="role"
-						>🖋️ Writer <span class="invert">✒️ Writer</span>
+					<span class="role text-lg lg:text-2xl relative"
+						>🖋️ Writer <span
+							class="inverted absolute flex justify-center items-center text-black w-full h-full top-0 left-0 pointer-events-none"
+							>✒️ Writer</span
+						>
 					</span>
-					<span class="role"
-						>📸 Photographer <span class="invert">🖼️ Photographer</span>
+					<span class="role text-lg lg:text-2xl relative"
+						>📸 Photographer <span
+							class="inverted absolute flex justify-center items-center text-black w-full h-full top-0 left-0 pointer-events-none"
+							>🖼️ Photographer</span
+						>
 					</span>
-					<p class="desc">Tech and Code Enthusiast, Basketball Fanatic ⛹🏾</p>
+					<p
+						class="desc text-black text-xl lg:text-2xl mt-6 mb-0 bg-[#82c982] py-1 px-2">
+						Tech and Code Enthusiast, Basketball Fanatic ⛹🏾
+					</p>
 				</div>
 			</div>
-			<div class="grid">
+			<div class="grid gap-8">
 				<section>
-					<h2 class="sectionTitle">My Work</h2>
+					<h2 class="text-2xl lg:text-5xl mt-8 mb-8 font-bold">My Work</h2>
 					<PortfolioPreview project={featuredProject} />
-					<div class="buttonContainer">
+					<div class="mt-8 text-center">
 						<a href="/projects/" class="button" rel="prefetch">View All</a>
 					</div>
 				</section>
 				<section id="technology">
-					<h2 class="sectionTitle">Technologies I Use</h2>
+					<h2 class="text-2xl lg:text-5xl mb-8 font-bold">
+						Technologies I Use
+					</h2>
 					<TechPreview />
 				</section>
 				<section id="section-about">
-					<h2 class="sectionTitle">About Me</h2>
-					<p class="bio">
-						<span>Hello!</span> I&#39m Ron, and this is my website. I enjoy opportunities
-						to learn new things and share ideas. I love science, technology, programming,
-						old cars and basketball. They all provide me the chance to explore new
-						ideas and satisfy my curiosity. I started sharing what I&#39ve learned
-						so far and what I&#39m learning now on my <a href="/blog">blog</a>.
+					<h2 class="text-2xl lg:text-5xl mb-4 font-bold">About Me</h2>
+					<p class="bio leading-8 mb-8">
+						<span class="text-xl lg:text-2xl font-semibold block mb-4 leading-4"
+							>Hello!</span
+						>
+						I&#39m Ron, and this is my website. I enjoy opportunities to learn new
+						things and share ideas. I love science, technology, programming, old
+						cars and basketball. They all provide me the chance to explore new ideas
+						and satisfy my curiosity. I started sharing what I&#39ve learned so far
+						and what I&#39m learning now on my <a
+							href="/blog"
+							rel="prefetch"
+							class="underline">blog</a
+						>.
 					</p>
 					<p>
 						<a href="/about" class="button" id="about" rel="prefetch"
