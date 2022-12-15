@@ -143,7 +143,7 @@ blockquote {
 
 .button:hover,
 .button:focus {
-	background-color: rgba(112, 128, 144, 0.1);
+	background-color: rgba(112, 128, 144, 0.3);
 }
 
 .wrapper {
