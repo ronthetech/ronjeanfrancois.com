@@ -14,7 +14,7 @@
 	--c-pink: #ffb8d9;
 	--c-red: #fd4b4b;
 	--c-orange: #ffb7a3;
-	--c-yellow: #ffdace;
+	--c-yellow: #eeedc2;
 	--c-white: #fff;
 	--c-light: #f1e7e7;
 	--c-dark: #06142b;
@@ -68,7 +68,6 @@ body {
 	font-family: Verdana, sans-serif;
 	margin: auto;
 	padding: 18px;
-	max-width: 48rem;
 	text-align: left;
 	background-color: var(--c-dark);
 	word-wrap: break-word;
