@@ -7,16 +7,15 @@ const isActive = href === Astro.url.pathname.replace(/\/$/, "")
 
 <a
 	href={href}
-	class:list={[className, { active: isActive }, "text-xl"]}
+	class:list={[
+		className,
+		{ active: isActive },
+		"text-xl inline-block py-0 px-2",
+	]}
 	{...props}>
 	<slot />
 </a>
 <style>
-	a {
-		display: inline-block;
-		text-decoration: none;
-		padding: 0 0.5rem;
-	}
 	a.active {
 		font-weight: bolder;
 		background-color: darkslateblue;
