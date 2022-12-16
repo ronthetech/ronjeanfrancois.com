@@ -17,13 +17,6 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
 			ul li time {
 				flex: 0 0 130px;
 				font-style: italic;
@@ -38,10 +31,10 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 		<Header />
 		<main>
 			<section>
-				<ul>
+				<ul class="list-none p-[unset]">
 					{
 						posts.map((post) => (
-							<li>
+							<li class="flex">
 								<time datetime={post.frontmatter.pubDate}>
 									{new Date(post.frontmatter.pubDate).toLocaleDateString(
 										"en-us",
