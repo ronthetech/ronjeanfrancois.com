@@ -65,12 +65,13 @@ const { content } = Astro.props
 					rel="noreferrer noopener"
 					target="_blank">Link</a
 				>
+				{content.github &&
 				<a
 					href={content.github}
 					class="button text-white mt-4"
 					rel="noreferrer noopener"
-					target="_blank">Github</a
-				>
+					target="_blank">Github</a>
+				}
 			</div>
 		</div>
 		<div class="mb-16 pb-16">
