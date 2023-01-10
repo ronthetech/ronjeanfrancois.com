@@ -3,6 +3,8 @@ import BaseHead from "../components/BaseHead.astro"
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 
+import github from "/icons/github-mark-white.svg"
+
 import type { Project } from "../types"
 
 interface Props {
@@ -59,19 +61,25 @@ const { content } = Astro.props
 				<h2 class="font-light text-[#817ae7] text-lg lg:text-2xl">
 					{content.description}
 				</h2>
-				<a
-					href={content.link}
-					class="button text-white mt-4"
-					rel="noreferrer noopener"
-					target="_blank">Link</a
-				>
-				{content.github &&
-				<a
-					href={content.github}
-					class="button text-white mt-4"
-					rel="noreferrer noopener"
-					target="_blank">Github</a>
-				}
+				<div class="flex gap-2 items-center justify-center mt-4">
+					<a
+						href={content.link}
+						class="button text-white"
+						rel="noreferrer noopener"
+						target="_blank">Link</a
+					>
+					{
+						content.github && (
+							<a
+								href={content.github}
+								class="bg-black rounded-2xl p-1.5 flex items-center justify-center border border-white"
+								rel="noreferrer noopener"
+								target="_blank">
+								<img src={github} alt="Github" class="h-8 w-8" />
+							</a>
+						)
+					}
+				</div>
 			</div>
 		</div>
 		<div class="mb-16 pb-16">
