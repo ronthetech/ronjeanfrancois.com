@@ -7,6 +7,7 @@ img: https://ronthetech.github.io/image-repo/eso-toolbox/0-alchemy-tool.png
 description: |
   Collection of tools and tips for popular MMORPG Elder Scrolls Online. Players can calculate the requirements for a runestone or the exact matching ingredients they need for a potion. 
 tags:
+  - javascript
   - typescript
   - react
   - next.js
