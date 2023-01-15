@@ -4,7 +4,7 @@ import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import PortfolioPreview from "../components/PortfolioPreview.astro"
 import TechPreview from "../components/TechPreview.astro"
-import { SITE_DESCRIPTION,SITE_TITLE } from "../config"
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config"
 import type { Project } from "../types"
 
 // Data Fetching: List all Markdown posts in the repo.
@@ -14,119 +14,126 @@ const featuredProject = projects[0]!
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			@media (min-width: 1200px) {
-				.grid {
-					grid-template-columns: 2fr;
-				}
-			}
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      @media (min-width: 1200px) {
+        .grid {
+          grid-template-columns: 2fr;
+        }
+      }
 
-			.role {
-				color: var(--t-bg);
-				background-color: var(--t-fg);
-				padding: 0.25em 0.5em;
-				z-index: 2;
-			}
+      .role {
+        color: var(--t-bg);
+        background-color: var(--t-fg);
+        padding: 0.25em 0.5em;
+        z-index: 2;
+      }
 
-			.role:nth-of-type(1) .inverted {
-				background-color: var(--c-red);
-			}
+      .role:nth-of-type(1) .inverted {
+        background-color: var(--c-red);
+      }
 
-			.role:nth-of-type(2) .inverted {
-				background-color: var(--c-blue);
-			}
+      .role:nth-of-type(2) .inverted {
+        background-color: var(--c-blue);
+      }
 
-			.role:nth-of-type(3) .inverted {
-				background-color: var(--c-green);
-			}
+      .role:nth-of-type(3) .inverted {
+        background-color: var(--c-green);
+      }
 
-			.role:hover .inverted {
-				clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-			}
+      .role:hover .inverted {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      }
 
-			.inverted {
-				clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
-				transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
-			}
-		</style>
-	</head>
-	<body class="max-w-3xl">
-		<Header title={SITE_TITLE} />
-		<main class="wrapper my-8">
-			<div class="relative overflow-visible">
-				<img
-					width="1600"
-					height="1131"
-					class="block w-full h-auto"
-					alt="sun setting over an amateur dragstrip for racing cars"
-					src="https://i.ibb.co/ngGmgfY/143-A35-E8-425-B-4-A9-C-9231-6-A93-A8169-E94.jpg"
-					sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px" />
-				<h1 class="text-2xl lg:text-3xl mt-4 font-medium">
-					Hi, I'm Ron! I'm a Full Stack Engineer
-				</h1>
-				<div class="roles flex flex-wrap gap-4 mt-4">
-					<span
-						class="role text-lg lg:text-2xl font-black relative inline-block whitespace-nowrap"
-						>👨🏾‍💻 Engineer <span
-							class="inverted absolute flex justify-center items-center text-black w-full h-full top-0 left-0 pointer-events-none"
-							>💻 Engineer</span>
-					</span>
-					<span
-						class="role text-lg lg:text-2xl font-black relative inline-block whitespace-nowrap"
-						>🖋️ Writer <span
-							class="inverted absolute flex justify-center items-center text-black w-full h-full top-0 left-0 pointer-events-none"
-							>✒️ Writer</span>
-					</span>
-					<span
-						class="role text-lg lg:text-2xl font-black relative inline-block whitespace-nowrap"
-						>📸 Photographer <span
-							class="inverted absolute flex justify-center items-center text-black w-full h-full top-0 left-0 pointer-events-none"
-							>🖼️ Photographer</span>
-					</span>
-					<p
-						class="desc text-black text-xl lg:text-2xl mt-6 mb-0 bg-[#82c982] py-1 px-2">
-						Tech and Code Enthusiast, Basketball Fanatic ⛹🏾
-					</p>
-				</div>
-			</div>
-			<div class="grid gap-8">
-				<section>
-					<h2 class="text-2xl lg:text-5xl mt-8 mb-8 font-bold">My Work</h2>
-					<PortfolioPreview project={featuredProject} />
-					<div class="mt-8 text-center">
-						<a href="/projects/" class="button" rel="prefetch">View All</a>
-					</div>
-				</section>
-				<section id="section-technology">
-					<h2 class="text-2xl lg:text-5xl mb-8 font-bold">Technology</h2>
-					<p class="leading-8 mb-8">
-						I enjoy building and experimenting with new developer tools,
-						programming languages, libraries and frameworks. Here are some of
-						the technologies that I have experience using for work, projects,
-						and open source.
-					</p>
-					<TechPreview />
-				</section>
-				<section id="section-about">
-					<h2 class="text-2xl lg:text-5xl mb-4 font-bold">About Me</h2>
-					<p class="leading-8 mb-8">
-						This website is a place for me to share resources and knowledge that I've gathered along my journey. I enjoy opportunities to try new things, share ideas, and make connections. Science, technology, programming, basketball, and old cars are just a few of the things that I'm passionate about. I love it when I get the chance to explore how a new system, product, or device works. I started sharing what I&#39ve learned so far and what I&#39m learning now on my
-						<a href="/blog" rel="prefetch" class="underline">blog</a>.
-					</p>
-					<p>
-						<a href="/about" class="button" id="about" rel="prefetch">more about me</a>
-					</p>
-				</section>
-			</div>
-			<!-- <p>
-        Looking for a blog template with a bit more personality? Check out <a
-          href="https://github.com/Charca/astro-blog-template"
-          >astro-blog-template
-        </a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-      </p> -->
-		</main>
-		<Footer />
-	</body>
+      .inverted {
+        clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
+        transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
+      }
+    </style>
+  </head>
+  <body class="max-w-4xl">
+    <Header title={SITE_TITLE} />
+    <main class="wrapper my-8">
+      <div class="relative overflow-visible">
+        <img
+          width="1600"
+          height="1131"
+          class="block w-full h-auto"
+          alt="sun setting over an amateur dragstrip for racing cars"
+          src="https://i.ibb.co/ngGmgfY/143-A35-E8-425-B-4-A9-C-9231-6-A93-A8169-E94.jpg"
+          sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
+        />
+        <h1 class="text-2xl lg:text-3xl mt-4 font-medium">
+          Hi, I'm Ron! I'm a Full Stack Engineer
+        </h1>
+        <div class="roles flex flex-wrap gap-4 mt-4">
+          <span
+            class="role text-lg lg:text-2xl font-black relative inline-block whitespace-nowrap"
+            >👨🏾‍💻 Engineer <span
+              class="inverted absolute flex justify-center items-center text-black w-full h-full top-0 left-0 pointer-events-none"
+              >💻 Engineer</span
+            >
+          </span>
+          <span
+            class="role text-lg lg:text-2xl font-black relative inline-block whitespace-nowrap"
+            >🖋️ Writer <span
+              class="inverted absolute flex justify-center items-center text-black w-full h-full top-0 left-0 pointer-events-none"
+              >✒️ Writer</span
+            >
+          </span>
+          <span
+            class="role text-lg lg:text-2xl font-black relative inline-block whitespace-nowrap"
+            >📸 Photographer <span
+              class="inverted absolute flex justify-center items-center text-black w-full h-full top-0 left-0 pointer-events-none"
+              >🖼️ Photographer</span
+            >
+          </span>
+          <p
+            class="desc text-black text-xl lg:text-2xl mt-6 mb-0 bg-[#82c982] py-1 px-2">
+            Tech and Code Enthusiast, Basketball Fanatic ⛹🏾
+          </p>
+        </div>
+      </div>
+      <div class="grid gap-8">
+        <section>
+          <h2 class="text-2xl lg:text-5xl mt-8 mb-8 font-bold">My Work</h2>
+          <PortfolioPreview project={featuredProject} />
+          <div class="mt-8 text-center">
+            <a href="/projects/" class="button" rel="prefetch">View All</a>
+          </div>
+        </section>
+        <section id="section-technology">
+          <h2 class="text-2xl lg:text-5xl mb-8 font-bold">Technology</h2>
+          <p class="leading-8 mb-8">
+            I enjoy building and experimenting with new developer tools,
+            programming languages, libraries and frameworks. Here are some of
+            the technologies that I have experience using for work, projects,
+            and open source.
+          </p>
+          <TechPreview />
+        </section>
+        <section id="section-about">
+          <h2 class="text-2xl lg:text-5xl mb-4 font-bold">About Me</h2>
+          <p class="leading-8 mb-8">
+            This website is a place for me to share resources and knowledge that
+            I've gathered along my journey. I enjoy opportunities to try new
+            things, share ideas, and make connections. Science, technology,
+            programming, basketball, and old cars are just a few of the things
+            that I'm passionate about. I love it when I get the chance to
+            explore how a new system, product, or device works. I started
+            sharing what I&#39ve learned so far and what I&#39m learning now on
+            my
+            <a href="/blog" rel="prefetch" class="underline">blog</a>.
+          </p>
+          <p>
+            <a href="/about" class="button" id="about" rel="prefetch"
+              >more about me</a
+            >
+          </p>
+        </section>
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>
