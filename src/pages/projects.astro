@@ -8,19 +8,19 @@ import type { Project } from "../types"
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const projects = (await Astro.glob<Project>("./project/**/*.md"))
-	.filter(({ frontmatter }) => !!frontmatter.publishDate)
-	.sort(
-		(a, b) =>
-			new Date(b.frontmatter.publishDate).valueOf() -
-			new Date(a.frontmatter.publishDate).valueOf(),
-	)
+  .filter(({ frontmatter }) => !!frontmatter.publishDate)
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.publishDate).valueOf() -
+      new Date(a.frontmatter.publishDate).valueOf()
+  )
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<!-- <style>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <!-- <style>
 			ul {
 				list-style-type: none;
 				padding: unset;
@@ -37,16 +37,16 @@ const projects = (await Astro.glob<Project>("./project/**/*.md"))
 				color: #8e32dc;
 			}
 		</style> -->
-	</head>
-	<body class="max-w-4xl">
-		<Header />
-		<main>
-			<div class="wrapper mx-auto px-4 max-w-2xl">
-				<h1 class="my-8 text-lg font-semibold">All Projects</h1>
-				<div class="grid gap-12">
-					{projects.map((project) => <PortfolioPreview project={project} />)}
-				</div>
-				<!-- <ul>
+  </head>
+  <body class="max-w-4xl">
+    <Header />
+    <main>
+      <div class="wrapper mx-auto px-4 max-w-2xl">
+        <h2 class="my-8 text-2xl font-semibold">All Projects</h2>
+        <div class="grid gap-12">
+          {projects.map((project) => <PortfolioPreview project={project} />)}
+        </div>
+        <!-- <ul>
 					{
 						projects.map((post) => (
 							<li>
@@ -65,8 +65,8 @@ const projects = (await Astro.glob<Project>("./project/**/*.md"))
 						))
 					}
 				</ul> -->
-			</div>
-		</main>
-		<Footer />
-	</body>
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>
