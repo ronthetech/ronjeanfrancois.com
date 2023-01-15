@@ -89,7 +89,7 @@ a {
 	color: var(--t-active);
 }
 nav a {
-	margin-right: 10px;
+	margin-right: 5px;
 }
 textarea {
 	width: 100%;
