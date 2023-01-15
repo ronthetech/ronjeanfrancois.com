@@ -6,11 +6,11 @@ import { defineConfig } from "astro/config"
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://www.ronjeanfrancois.com/",
-	markdown: {
-		shikiConfig: {
-			theme: "github-dark",
-		},
-	},
-	integrations: [mdx(), sitemap(), prefetch(), tailwind()],
+  site: "https://www.ronjeanfrancois.com/",
+  markdown: {
+    shikiConfig: {
+      theme: "github-dark",
+    },
+  },
+  integrations: [mdx(), sitemap(), prefetch(), tailwind()],
 })
