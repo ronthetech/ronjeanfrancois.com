@@ -8,86 +8,86 @@ import github from "/icons/github-mark-white.svg"
 import type { Project } from "../types"
 
 interface Props {
-	content: Project
+  content: Project
 }
 
 const { content } = Astro.props
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={content.title} description={content.description} />
-		<style>
-			.tag:nth-of-type(1n) {
-				color: var(--c-green);
-			}
-			.tag:nth-of-type(2n) {
-				color: var(--c-orange);
-			}
-			.tag:nth-of-type(3n) {
-				color: var(--c-blue);
-			}
-			.tag:nth-of-type(4n) {
-				color: var(--c-pink);
-			}
+<html lang="en" class="font-mono">
+  <head>
+    <BaseHead title={content.title} description={content.description} />
+    <style>
+      .tag:nth-of-type(1n) {
+        color: var(--c-green);
+      }
+      .tag:nth-of-type(2n) {
+        color: var(--c-orange);
+      }
+      .tag:nth-of-type(3n) {
+        color: var(--c-blue);
+      }
+      .tag:nth-of-type(4n) {
+        color: var(--c-pink);
+      }
 
-			.content {
-				font-size: var(--f-u1);
-				line-height: 2.2;
-				max-width: 50em;
-				margin: auto;
-			}
-		</style>
-	</head>
-	<body class="max-w-4xl">
-		<Header />
-		<div
-			style={`background-image:url(${content.img})`}
-			class="text-white flex flex-col items-center justify-center p-32 min-h-[25vw] bg-[#05091e] bg-no-repeat bg-cover">
-			<h1
-				class="text-black text-center text-3xl tracking-wider uppercase font-black bg-[#708090b3]">
-				{content.title}
-			</h1>
-		</div>
-		<div class="text-center pb-16 text-white bg-[#05091e]">
-			<div class="mb-16 pb-16">
-				<div class="flex flex-wrap justify-around lg:px-16 my-4">
-					{
-						content.tags.map((t) => (
-							<span class="tag uppercase text-lg mx-3 lg:text-2xl">{t}</span>
-						))
-					}
-				</div>
-				<h2 class="font-light text-[#817ae7] text-lg lg:text-2xl px-6">
-					{content.description}
-				</h2>
-				<div class="flex gap-2 items-center justify-center mt-4">
-					<a
-						href={content.link}
-						class="button text-white"
-						rel="noreferrer noopener"
-						target="_blank">Link</a
-					>
-					{
-						content.github && (
-							<a
-								href={content.github}
-								class="bg-black rounded-2xl p-1.5 flex items-center justify-center border border-white"
-								rel="noreferrer noopener"
-								target="_blank">
-								<img src={github} alt="Github" class="h-8 w-8" />
-							</a>
-						)
-					}
-				</div>
-			</div>
-		</div>
-		<div class="mb-16 pb-16">
-			<div class="content"><slot /></div>
-		</div>
-		<div class="text-center mt-12">
-			<a href="/projects" class="button" rel="prefetch">View More</a>
-		</div>
-		<Footer />
-	</body>
+      .content {
+        font-size: var(--f-u1);
+        line-height: 2.2;
+        max-width: 50em;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body class="max-w-4xl">
+    <Header />
+    <div
+      style={`background-image:url(${content.img})`}
+      class="text-white flex flex-col items-center justify-center p-32 min-h-[25vw] bg-[#05091e] bg-no-repeat bg-cover">
+      <h1
+        class="text-black text-center text-3xl tracking-wider uppercase font-black bg-[#708090b3]">
+        {content.title}
+      </h1>
+    </div>
+    <div class="text-center pb-16 text-white bg-[#05091e]">
+      <div class="mb-16 pb-16">
+        <div class="flex flex-wrap justify-around lg:px-16 my-4">
+          {
+            content.tags.map((t) => (
+              <span class="tag uppercase text-lg mx-3 lg:text-2xl">{t}</span>
+            ))
+          }
+        </div>
+        <h2 class="font-light text-[#817ae7] text-lg lg:text-2xl px-6">
+          {content.description}
+        </h2>
+        <div class="flex gap-2 items-center justify-center mt-4">
+          <a
+            href={content.link}
+            class="button text-white"
+            rel="noreferrer noopener"
+            target="_blank">Link</a
+          >
+          {
+            content.github && (
+              <a
+                href={content.github}
+                class="bg-black rounded-2xl p-1.5 flex items-center justify-center border border-white"
+                rel="noreferrer noopener"
+                target="_blank">
+                <img src={github} alt="Github" class="h-8 w-8" />
+              </a>
+            )
+          }
+        </div>
+      </div>
+    </div>
+    <div class="mb-16 pb-16">
+      <div class="content"><slot /></div>
+    </div>
+    <div class="text-center mt-12">
+      <a href="/projects" class="button" rel="prefetch">View More</a>
+    </div>
+    <Footer />
+  </body>
 </html>
