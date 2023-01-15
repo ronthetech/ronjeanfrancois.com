@@ -4,54 +4,54 @@ import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 
 export interface Props {
-	content: {
-		title: string
-		description: string
-		pubDate?: string
-		updatedDate?: string
-		heroImage?: string
-		alt?: string
-	}
+  content: {
+    title: string
+    description: string
+    pubDate?: string
+    updatedDate?: string
+    heroImage?: string
+    alt?: string
+  }
 }
 
 const {
-	content: { title, description, pubDate, updatedDate, heroImage, alt },
+  content: { title, description, pubDate, updatedDate, heroImage, alt },
 } = Astro.props
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
+<html lang="en" class="font-mono">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
 
-	<body class="max-w-4xl">
-		<Header />
-		<main>
-			<article class="prose prose-invert prose-lg mb-4">
-				{
-					heroImage && (
-						<img width={720} height={360} src={heroImage} alt={alt} />
-					)
-				}
-				<h1 class="text-3xl lg:text-4xl my-1 mx-0">{title}</h1>
-				{pubDate && <time>{pubDate}</time>}
-				{
-					updatedDate && (
-						<div>
-							Last updated on <time>{updatedDate}</time>
-						</div>
-					)
-				}
-				<hr class="my-4 border-t border-t-white" />
-				<slot />
-			</article>
-			<a
-				href="/blog"
-				class="text-lg lg:text-xl no-underline hover:underline focus:underline mt-8"
-				id="back-to-blog"
-				rel="prefetch">&lt;&#45; Back to Ron&#39s Blog</a
-			>
-		</main>
-		<Footer />
-	</body>
+  <body class="max-w-4xl">
+    <Header />
+    <main>
+      <article class="prose prose-invert prose-lg mb-4">
+        {
+          heroImage && (
+            <img width={720} height={360} src={heroImage} alt={alt} />
+          )
+        }
+        <h1 class="text-3xl lg:text-4xl my-1 mx-0">{title}</h1>
+        {pubDate && <time>{pubDate}</time>}
+        {
+          updatedDate && (
+            <div>
+              Last updated on <time>{updatedDate}</time>
+            </div>
+          )
+        }
+        <hr class="my-4 border-t border-t-white" />
+        <slot />
+      </article>
+      <a
+        href="/blog"
+        class="text-lg lg:text-xl no-underline hover:underline focus:underline mt-8"
+        id="back-to-blog"
+        rel="prefetch">&lt;&#45; Back to Ron&#39s Blog</a
+      >
+    </main>
+    <Footer />
+  </body>
 </html>
