@@ -1,0 +1,51 @@
+---
+import BaseHead from "../components/BaseHead.astro"
+import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro"
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config"
+
+import send from "../assets/icons/Send.svg"
+import twitter from "../assets/icons/Twitter.svg"
+---
+
+<!DOCTYPE html>
+<html lang="en" class="font-mono">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style></style>
+  </head>
+  <body class="max-w-4xl bg-[url('/src/assets/circuit-board.svg')]">
+    <Header />
+    <main class="wrapper my-8">
+      <h1 class="my-8 text-4xl font-semibold">Contact</h1>
+      <section class="wrapper mx-auto px-4 max-w-2xl">
+        Building something special and want to chat? I would love to hear about
+        it! Send me a quick email or a DM on Twitter and we can schedule a time
+        to talk.
+        <div class="flex items-center gap-4 mt-3">
+          <span
+            class="w-9 h-9 flex items-center justify-center border-t border-zinc-700 rounded-full"
+            ><img src={send} alt="" height={20} width={20} />
+          </span>
+          <a
+            href="mailto:jeanfrancoisron@gmail.com"
+            class="text-lg text-zinc-200 underline hover:text-slate-500 focus:text-slate-500"
+            >jeanfrancoisron@gmail.com</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <span
+            class="w-9 h-9 flex items-center justify-center border-t border-zinc-700 rounded-full"
+            ><img src={twitter} alt="" height={20} width={20} />
+          </span>
+          <a
+            href="https://twitter.com/ronjtech"
+            class="text-lg text-zinc-200 underline hover:text-slate-500 focus:text-slate-500"
+            >@ronjtech</a
+          >
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
