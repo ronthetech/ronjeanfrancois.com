@@ -42,7 +42,7 @@ const projects = (await Astro.glob<Project>("./project/**/*.md"))
     <Header />
     <main>
       <div class="wrapper mx-auto px-4 max-w-2xl">
-        <h2 class="my-8 text-2xl font-semibold">All Projects</h2>
+        <h2 class="my-8 text-4xl font-semibold">Work</h2>
         <div class="grid gap-12">
           {projects.map((project) => <PortfolioPreview project={project} />)}
         </div>
