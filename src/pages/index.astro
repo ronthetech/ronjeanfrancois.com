@@ -7,6 +7,9 @@ import TechPreview from "../components/TechPreview.astro"
 import { SITE_DESCRIPTION, SITE_TITLE } from "../config"
 import type { Project } from "../types"
 
+import send from "../assets/icons/Send.svg"
+import twitter from "../assets/icons/Twitter.svg"
+
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob<Project>("./project/**/*.md")
 const featuredProject = projects[0]!
@@ -131,6 +134,46 @@ const featuredProject = projects[0]!
               >more about me</a
             >
           </p>
+        </section>
+        <section id="section-contact" class="wrapper mx-auto px-4 max-w-2xl">
+          <h2 class="text-2xl lg:text-5xl mb-4 font-bold">Get In Touch</h2>
+          <p>
+            Building something special and want to chat? I would love to hear
+            about it! Send me a quick email or a DM on Twitter and we can
+            schedule a time to talk.
+          </p>
+          <div class="flex items-center gap-4 mt-3">
+            <span
+              class="w-9 h-9 flex items-center justify-center border-t border-zinc-700 rounded-full"
+              ><img
+                src={send}
+                alt="send email to jeanfrancoisron@gmail.com"
+                height={20}
+                width={20}
+              />
+            </span>
+            <a
+              href="mailto:jeanfrancoisron@gmail.com"
+              class="text-lg text-zinc-200 underline hover:text-slate-500 focus:text-slate-500"
+              >jeanfrancoisron@gmail.com</a
+            >
+          </div>
+          <div class="flex items-center gap-4">
+            <span
+              class="w-9 h-9 flex items-center justify-center border-t border-zinc-700 rounded-full"
+              ><img
+                src={twitter}
+                alt="Twitter handle @ronjtech"
+                height={20}
+                width={20}
+              />
+            </span>
+            <a
+              href="https://twitter.com/ronjtech"
+              class="text-lg text-zinc-200 underline hover:text-slate-500 focus:text-slate-500"
+              >@ronjtech</a
+            >
+          </div>
         </section>
       </div>
     </main>
