@@ -1,4 +1,7 @@
 ---
+import astro from "../assets/icons/Astro.svg"
+import bootstrap from "../assets/icons/Bootstrap.svg"
+import git from "../assets/icons/Git.svg"
 import javascript from "../assets/icons/JavaScript.svg"
 import mongodb from "../assets/icons/MongoDB.svg"
 import nextjs from "../assets/icons/NextJS-Dark.svg"
@@ -6,10 +9,11 @@ import nodejs from "../assets/icons/NodeJS-Dark.svg"
 import postgresql from "../assets/icons/PostgreSQL-Dark.svg"
 import python from "../assets/icons/Python-Dark.svg"
 import reactjs from "../assets/icons/React-Dark.svg"
+import tailwind from "../assets/icons/TailwindCSS-Dark.svg"
 import typescript from "../assets/icons/TypeScript.svg"
 ---
 
-<ul class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+<ul class="grid grid-cols-1 gap-5 sm:grid-cols-3">
   <li
     class="transition duration-700 ease-in delay-700 hover:transition hover:duration-700 hover:ease-out flex items-center gap-4">
     <span
@@ -74,11 +78,25 @@ import typescript from "../assets/icons/TypeScript.svg"
         class="hover:animate-bounce-slow focus:animate-bounce-slow"
         src={nextjs}
         alt=""
-        height={30}
-        width={30}
+        height={31}
+        width={31}
       />
     </span>
     <p class="text-zinc-200">Next.js</p>
+  </li>
+
+  <li class="flex items-center gap-4">
+    <span
+      class="w-11 h-11 flex items-center justify-center border-t border-zinc-700 bg-zinc-800 rounded-full"
+      ><img
+        class="hover:animate-bounce-slow focus:animate-bounce-slow"
+        src={git}
+        alt=""
+        height={27}
+        width={27}
+      />
+    </span>
+    <p class="text-zinc-200">Git</p>
   </li>
 
   <li class="flex items-center gap-4">
@@ -121,5 +139,47 @@ import typescript from "../assets/icons/TypeScript.svg"
       />
     </span>
     <p class="text-zinc-200">MongoDB</p>
+  </li>
+
+  <li class="flex items-center gap-4">
+    <span
+      class="w-11 h-11 flex items-center justify-center border-t border-zinc-700 bg-zinc-800 rounded-full"
+      ><img
+        class="hover:animate-bounce-slow focus:animate-bounce-slow"
+        src={astro}
+        alt=""
+        height={25}
+        width={25}
+      />
+    </span>
+    <p class="text-zinc-200">Astro</p>
+  </li>
+
+  <li class="flex items-center gap-4">
+    <span
+      class="w-11 h-11 flex items-center justify-center border-t border-zinc-700 bg-zinc-800 rounded-full"
+      ><img
+        class="hover:animate-bounce-slow focus:animate-bounce-slow"
+        src={tailwind}
+        alt=""
+        height={25}
+        width={25}
+      />
+    </span>
+    <p class="text-zinc-200">TailwindCSS</p>
+  </li>
+
+  <li class="flex items-center gap-4">
+    <span
+      class="w-11 h-11 flex items-center justify-center border-t border-zinc-700 bg-zinc-800 rounded-full"
+      ><img
+        class="hover:animate-bounce-slow focus:animate-bounce-slow"
+        src={bootstrap}
+        alt=""
+        height={27}
+        width={27}
+      />
+    </span>
+    <p class="text-zinc-200">Bootstrap</p>
   </li>
 </ul>
