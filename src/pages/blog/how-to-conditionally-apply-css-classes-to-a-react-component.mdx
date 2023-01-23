@@ -1,0 +1,67 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "How to Conditionally Apply CSS Classes to a React Component"
+description: "Conditionally assign classes based on an object property"
+pubDate: "Jan 16 2023"
+heroImage: "/banner/pink_flamingo.jpg"
+---
+
+## {frontmatter.description}
+
+Consider we had to display information on some tickets in a ticket or issue tracker. The ticket structure might look something like this:
+
+```js
+const tickets = [
+  {
+    id: 1,
+    subject: "windows not working",
+    description: "I closed the window, but still nothing. Should I try closing the drapes?",
+    status: "Closed"
+  },
+  {
+    id: 2,
+    subject: "slow download",
+    description: "It takes 3 hours to download a 100mb file",
+    status: "Open"
+  },
+  {
+    id: 3,
+    subject: "broken button",
+    description: "Its not letting me press the sign in button.",
+    status: "Open"
+  },
+]
+```
+
+Each of these tickets has a `property` called `status` which can either be "Open" or "Closed". We want the displayed tickets to change their values as well as their styling depending on the value of their `status` property. If the ticket is "Open" we want to style it with a red background. If the ticket is "Closed" we want to style it with a purple background.
+
+We can accomplish this by using a `ternary` operator in JavaScript. Our `ternary` will check if the ticket is open or not and conditionally apply CSS classes.
+
+In the example below, the component starts off with the class `badge`. We use JavaScript string interpolation - the dollar sign, and curly braces, wrapped by back-ticks `${}` - to include JavaScript in a string:
+
+```js
+<span
+ className={`badge${ ticket.status === "Closed" ? " purple" : " red" }`}>
+  {ticket.status}
+</span>
+```
+
+(notice the spaces are included, otherwise the string would be concatenated into one word)
+
+The CSS classes above would be applied to match the following situations:
+
+```js
+// when the ticket is `Closed`
+<span className="badge purple" >
+  Closed
+</span>
+
+// when the ticket is `Open`
+<span className="badge red" >
+  Open
+</span>
+```
+
+### Conclusion
+
+Try conditionally applying CSS classes to some of your React components in a project and let me know how it goes! You can find me on: <a href="https://twitter.com/ronjtech" target="_blank" rel="noreferrer noopener">Twitter</a>, <a href="https://www.linkedin.com/in/ronjf/" target="_blank" rel="noreferrer noopener">LinkedIn</a>, or <a href="https://github.com/ronthetech" target="_blank" rel="noreferrer noopener">Github</a>
