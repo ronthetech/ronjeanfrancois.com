@@ -46,8 +46,6 @@ In the example below, the component starts off with the class `badge`. We use Ja
 </span>
 ```
 
-(notice the spaces are included, otherwise the string would be concatenated into one word)
-
 The CSS classes above would be applied to match the following situations:
 
 ```js
@@ -58,6 +56,30 @@ The CSS classes above would be applied to match the following situations:
 
 // when the ticket is `Open`
 <span className="badge red" >
+  Open
+</span>
+```
+
+(notice the spaces are included, otherwise the string would be concatenated into one word)
+If your component doesn't start off with any classes, you would just omit the class `badge` and remove the spaces before the classes that you want to conditionally apply:
+
+```js
+<span
+ className={`${ ticket.status === "Closed" ? "purple" : "red" }`}>
+  {ticket.status}
+</span>
+```
+
+The CSS classes above would be applied to match the following situations:
+
+```js
+// when the ticket is `Closed`
+<span className="purple" >
+  Closed
+</span>
+
+// when the ticket is `Open`
+<span className="red" >
   Open
 </span>
 ```
