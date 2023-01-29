@@ -2,7 +2,7 @@
 import BaseHead from "../components/BaseHead.astro"
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
-import { SITE_DESCRIPTION, SITE_TITLE } from "../config"
+import { SITE_DESCRIPTION,SITE_TITLE } from "../config"
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
@@ -27,7 +27,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
       }
     </style>
   </head>
-  <body class="max-w-4xl bg-[url('/src/assets/circuit-board.svg')]">
+  <body class="max-w-4xl mx-auto bg-[url('/src/assets/circuit-board.svg')]">
     <Header />
     <main>
       <section>
