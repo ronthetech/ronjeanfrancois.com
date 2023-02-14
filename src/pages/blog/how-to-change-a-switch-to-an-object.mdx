@@ -1,0 +1,72 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "How to Change a Switch Statement to an Object in JavaScript"
+description: "In JavaScript, you can substitute a switch statement with an object."
+pubDate: "Jan 17 2023"
+heroImage: "/banner/fox_in_field2.jpg"
+alt: "An oil painting of a fox in a field"
+category: "guide"
+tags: ["#guide","#javascript","#switch","#object","#tip"]
+---
+
+## {frontmatter.description}
+
+The function below is a switch statement:
+
+```js
+function whoPlaysWhere(val) {
+let answer = "";
+
+  switch (val) {
+    case "Steph Curry":
+      answer = "Golden State Warriors";
+      break;
+    case "LeBron James":
+      answer = "Los Angeles Lakers";
+      break;
+    case "Kevin Durant":
+      answer = "Brooklyn Nets"
+      break;
+    case "Giannis Antetokounmpo" :
+      answer = "Milwaukee Bucks"
+      break;
+  }
+  
+  return answer;
+}
+```
+
+The function below shows an object that achieves the same results:
+
+```js
+function whoPlaysWhere(val) {
+let answer = "";
+
+  const players = {
+    "Steph Curry" : "Golden State Warriors",
+    "LeBron James" : "Los Angeles Lakers",
+    "Kevin Durant" : "Brooklyn Nets",
+    "Giannis Antetokounmpo" : "Milwaukee Bucks",
+  }
+  
+  answer = players[val];
+  return answer;
+}
+```
+
+The function below will return the same results as the one above:
+
+```js
+function whoPlaysWhereObject(val) {
+  return {
+    "Steph Curry" : "Golden State Warriors",
+    "LeBron James" : "Los Angeles Lakers",
+    "Kevin Durant" : "Brooklyn Nets",
+    "Giannis Antetokounmpo" : "Milwaukee Bucks",
+  }[val];
+}
+```
+
+Objects are a powerful part of JavaScript, and they can help you simplify your code. Practice changing switch statements to objects and let me know how it goes! You can find me on: <a href="https://twitter.com/ronjtech" target="_blank" rel="noreferrer noopener">Twitter</a>, <a href="https://www.linkedin.com/in/ronjf/" target="_blank" rel="noreferrer noopener">LinkedIn</a>, or <a href="https://github.com/ronthetech" target="_blank" rel="noreferrer noopener">Github</a>
+
+#### {frontmatter.tags.join(', ')}
