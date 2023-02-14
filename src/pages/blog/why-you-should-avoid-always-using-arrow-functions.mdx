@@ -1,0 +1,48 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "Why You Should Avoid Always Using Arrow Functions"
+description: "Arrow functions are a useful part of JavaScript, but you shouldn't use them for everything"
+pubDate: "Jan 21 2023"
+heroImage: "/banner/fox_in_field.jpg"
+alt: "An oil painting of a fox in a field"
+category: "guide"
+tags: ["#guide","#javascript","#arrow-functions","#tip","#es6"]
+---
+
+## {frontmatter.description}
+
+ES6 introduced arrow functions to the JavaScript ecosystem. Though they are a powerful feature, you shouldn't get carried away when implementing ES6 arrow functions. They don't allow the same or expected use of the this keyword. In a regular function you can use this to refer to:
+
+```js
+var bird = {
+  species: "dove",
+  color:"white",
+  identify: function(){
+    return `${this.color} ${this.species}`
+  }
+}
+
+console.log(bird.identify()) // white dove
+```
+
+However, in ES6 arrow functions, `this` refers to the global object:
+
+```js
+var bird = {
+  species: "dove",
+  color:"white",
+    identify: function(){
+    return `${this.color} ${this.species}`
+  },
+  getIdentity: () => {
+    return `${this.color} ${this.species}`
+  }
+}
+
+console.log(bird.identify()) // white dove
+console.log(bird.getIdentity()) // undefined undefined
+```
+
+While ES6 arrow functions are a powerful and useful part of JavaScript, you should avoid overusing them. You can find me on: <a href="https://twitter.com/ronjtech" target="_blank" rel="noreferrer noopener">Twitter</a>, <a href="https://www.linkedin.com/in/ronjf/" target="_blank" rel="noreferrer noopener">LinkedIn</a>, or <a href="https://github.com/ronthetech" target="_blank" rel="noreferrer noopener">Github</a>
+
+#### {frontmatter.tags.join(', ')}
