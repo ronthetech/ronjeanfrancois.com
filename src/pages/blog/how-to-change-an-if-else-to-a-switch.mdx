@@ -1,0 +1,61 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "How to Change an If-Else Statement to a Switch Statement in JavaScript"
+description: "In JavaScript, you can substitute the if...else statement with a switch statement."
+pubDate: "Jan 11 2023"
+heroImage: "/banner/fox_in_field2.jpg"
+alt: "An oil painting of a fox in a field"
+category: "guide"
+tags: ["#guide","#javascript","#if-else","#switch","#tip"]
+---
+
+## {frontmatter.description}
+
+The function below is an if-else statement:
+
+```js
+function chainToSwitch(val){
+  let answer = "";
+  
+  if (val === "hip hip") {
+    answer = "hooray!"
+  } else if (val === 7) {
+    answer = "Ate 9"
+  } else if (val === "Michael") {
+    answer = "Jackson"
+  } else {
+    answer = "Not this time!"
+  }
+  
+  return answer;
+}
+```
+
+The function below is a switch statement that achieves the same results:
+
+```js
+function switchedChain(val){
+  let answer = "";
+  
+  switch (val) {
+    case "hip hip":
+      answer = "hooray!";
+      break;
+    case 7:
+      answer = "Ate 9";
+      break;
+    case "Michael":
+      answer = "Jackson"
+      break;
+    default :
+      answer = "Not this time!"
+      break;
+  }
+  
+  return answer;
+}
+```
+
+THe switch statement can simplify your code, making your life easier when writing JavaScript. Practice changing if-else statements to switch statements and let me know how it goes! You can find me on: <a href="https://twitter.com/ronjtech" target="_blank" rel="noreferrer noopener">Twitter</a>, <a href="https://www.linkedin.com/in/ronjf/" target="_blank" rel="noreferrer noopener">LinkedIn</a>, or <a href="https://github.com/ronthetech" target="_blank" rel="noreferrer noopener">Github</a>
+
+#### {frontmatter.tags.join(', ')}
