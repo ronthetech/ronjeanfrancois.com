@@ -1,0 +1,51 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "How to use React's useContext Hook"
+description: "useContext lets you share data between your components"
+pubDate: "Dec 29 2022"
+heroImage: "/banner/red_sunset.jpg"
+alt: "An illustration of a red sunset"
+category: "guide"
+tags: ["#guide","#javascript","#react","#usecontext","#hook"]
+---
+
+## {frontmatter.description}
+
+In React, context lets you pass data from a parent component down the component tree to its children components, without having to manually pass props down at each level. The useContext hook lets any component in the component tree read and subscribe to context if needed. The component rerenders When the closest parent component with `<YourContext.Provider>` updates, and the context value changes.
+
+```js
+import { createContext, useContext } from 'react'
+
+const context = {
+  swim:'🏊🏾',
+  climb:'🧗🏾',
+  bike:'🚴🏿'
+}
+
+// creates the context
+const YourContext = createContext(context) 
+
+export default function App() {
+  return (
+    /* provides the value for the context*/
+    <YourContext.Provider value={context.swim}> 
+      <Page />
+    </YourContext.Provider>
+  )
+}
+
+function Page() {
+  // lets you read or 'consume' context and subscribe to changes
+  const value = useContext(YourContext) 
+  
+  return (
+    <p>
+      {value}
+    </p>
+  )
+}
+```
+
+Try adding context to a React project and let me know how it goes! You can find me on: <a href="https://twitter.com/ronjtech" target="_blank" rel="noreferrer noopener">Twitter</a>, <a href="https://www.linkedin.com/in/ronjf/" target="_blank" rel="noreferrer noopener">LinkedIn</a>, or <a href="https://github.com/ronthetech" target="_blank" rel="noreferrer noopener">Github</a>
+
+#### {frontmatter.tags.join(', ')}
