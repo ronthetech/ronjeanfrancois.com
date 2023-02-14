@@ -1,0 +1,28 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "How to use the Reduce Method in JavaScript"
+description: "Reduce all elements of an array to a single value"
+pubDate: "Jan 9 2023"
+heroImage: "/banner/pink_flamingo.jpg"
+alt: "An oil painting of a fox in a field"
+category: "guide"
+tags: ["#guide","#javascript","#array","#reduce","#method","#tip"]
+---
+
+## {frontmatter.description}
+
+In JavaScript, the .reduce() method allows you to "reduce" an array to a single value. You provide a "reducer" callback function that executes on every element in an array in order, where the return value from the results of the calculations on the previous element are passed in on the next run.
+
+```js
+const points = [54, 46, 30, 35, 42]
+
+const total = points.reduce((x,y) => x + y)
+
+console.log(total)
+
+/// 207
+```
+
+Practice using the reduce method and let me know how it goes! You can find me on: <a href="https://twitter.com/ronjtech" target="_blank" rel="noreferrer noopener">Twitter</a>, <a href="https://www.linkedin.com/in/ronjf/" target="_blank" rel="noreferrer noopener">LinkedIn</a>, or <a href="https://github.com/ronthetech" target="_blank" rel="noreferrer noopener">Github</a>
+
+#### {frontmatter.tags.join(', ')}
