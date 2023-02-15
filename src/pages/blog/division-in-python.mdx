@@ -1,0 +1,52 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "Division in Python"
+description: "Taking a look at division in Python"
+pubDate: "Oct 10 2022"
+heroImage: "/banner/wizard0.png"
+alt: "An vibrant illustration of an alchemy potion brewing"
+category: "tip"
+tags: ["#tip","#python","#division","#integer","#decimal"]
+---
+
+### {frontmatter.description}
+
+In many programming languages, when you divide a number by another number, if the result isn’t a whole number, it will be rounded towards 0. This is known as integer division. However, in Python that isn’t the case. When you divide a number by another number, Python does decimal division by default.
+
+```python
+print(7 / 2)
+# Output: 
+# 3.5
+```
+
+While this may be fine for many use cases, it is important to keep in mind that Python doesn't round to zero, it rounds down to the nearest whole number.
+
+```python
+print(7 // 2) # 7 / 2 = 3.5 rounded down to nearest whole number 3
+# Output: 
+# 3
+```
+
+If you were to divide a negative number, the result would be rounded down, instead of up towards 0.
+
+```python
+print(-7 / 2)
+# Output: 
+# -3.5
+
+print(-7 // 2) # -7 / 2 = -3.5 rounds down to nearest whole number -4
+# Output: 
+# -4
+```
+
+A possible workaround for this would be to use decimal division then convert the value to an int. This works because when you convert it to an int it will round towards 0.
+
+```python
+print(int(-7 / 2)) # -7 / 2 = -3.5 rounded to zero gives us -3
+# Output:
+# -3
+```
+
+You should check out my other blog posts for more helpful tips and guides. To connect you can find me on: <a href="https://twitter.com/ronjtech" target="_blank" rel="noreferrer noopener">Twitter</a>, <a href="https://www.linkedin.com/in/ronjf/" target="_blank" rel="noreferrer noopener">LinkedIn</a>, or <a href="https://github.com/ronthetech" target="_blank" rel="noreferrer noopener">Github</a>
+
+#### {frontmatter.tags.join(', ')}
