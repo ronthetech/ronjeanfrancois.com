@@ -11,36 +11,109 @@ tags: ["#guide","#javascript","#react","#usecontext","#hook"]
 
 ## {frontmatter.description}
 
-In React, context lets you pass data from a parent component down the component tree to its children components, without having to manually pass props down at each level. The useContext hook lets any component in the component tree read and subscribe to context if needed. The component rerenders When the closest parent component with `<YourContext.Provider>` updates, and the context value changes.
+In React, context lets you pass data from a parent component down the component tree to its children components, without having to manually pass props down at each level. The `useContext` hook lets any component in the component tree read and subscribe to context if needed. The component rerenders When the closest parent component with `<YourContext.Provider>` updates, and the context value changes.
+
+First, we import createContext from React:
+
+```js
+import { createContext } from 'react'
+```
+
+Next, let's create some context or data that we want to share throughout our application:
+
+```js
+import { createContext } from 'react'
+
+const actionContext = {
+  swim:'🏊🏾',
+  climb:'🧗🏾',
+  bike:'🚴🏿'
+}
+```
+
+In this example, we use an object and key-value pairs, for the context. The key 'swim' for the value 🏊🏾, (person swimming emoji), the key 'climb' for the value 🧗🏾, (person climbing emoji), and the key 'bike' for the value 🚴🏿, (person biking emoji).
+
+Then we pass this context that we created to the createContext() function:
+
+```js
+// rest of the code
+
+// creates the context
+const ActionContext = createContext(actionContext); 
+```
+
+Now that we have created our context, we can pass it to the <Context.Provider>:
+
+```js
+// rest of the code
+
+export default function App() {
+  return (
+    /* provides the value for the context*/
+    <ActionContext.Provider value={actionContext.swim}> 
+      <Page />
+    </ActionContext.Provider>
+  )
+}
+```
+
+Next, let's update the import at the top of the file and add the useContext() hook from React:
 
 ```js
 import { createContext, useContext } from 'react'
 
-const context = {
+// rest of the code
+```
+
+Finally, we can use this context further down our application:
+
+```js
+// rest of the code
+
+function Page() {
+  // lets you read or 'consume' context and subscribe to changes
+  const value = useContext(ActionContext) 
+  
+  return (
+    <p>
+      I like to {value}. It is my favorite activity.
+    </p>
+  )
+}
+```
+
+Now we can access the context within our components.
+
+Putting it all together:
+
+```js
+import { createContext, useContext } from 'react'
+
+const actionContext = {
   swim:'🏊🏾',
   climb:'🧗🏾',
   bike:'🚴🏿'
 }
 
 // creates the context
-const YourContext = createContext(context) 
+const ActionContext = createContext(actionContext) 
 
 export default function App() {
   return (
     /* provides the value for the context*/
-    <YourContext.Provider value={context.swim}> 
+    <ActionContext.Provider value={actionContext.swim}> 
       <Page />
-    </YourContext.Provider>
+    </ActionContext.Provider>
   )
 }
 
 function Page() {
   // lets you read or 'consume' context and subscribe to changes
-  const value = useContext(YourContext) 
+  const value = useContext(ActionContext) 
   
   return (
     <p>
-      {value}
+      I like to {value}. It is my favorite activity.
     </p>
   )
 }
