@@ -18,7 +18,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
       ul li time {
-        flex: 0 0 130px;
+        flex: 0 0 140px;
         font-style: italic;
         color: #595959;
       }
@@ -31,10 +31,10 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     <Header />
     <main>
       <section>
-        <ul class="list-none p-[unset]">
+        <ul class="list-none p-[unset] flex flex-col gap-6">
           {
             posts.map((post) => (
-              <li class="flex">
+              <li class="flex gap-4">
                 <time datetime={post.frontmatter.pubDate}>
                   {new Date(post.frontmatter.pubDate).toLocaleDateString(
                     "en-us",
@@ -45,7 +45,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
                     }
                   )}
                 </time>
-                <a href={post.url} rel="prefetch">
+                <a class="hover:text-blue-500 hover:underline" href={post.url} rel="prefetch">
                   {post.frontmatter.title}
                 </a>
               </li>
