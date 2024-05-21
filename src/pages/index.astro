@@ -3,12 +3,10 @@ import BaseHead from "../components/BaseHead.astro"
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import PortfolioPreview from "../components/PortfolioPreview.astro"
-import TechPreview from "../components/TechPreview.astro"
 import { SITE_DESCRIPTION,SITE_TITLE } from "../config"
 import type { Project } from "../types"
 
 import send from "../assets/icons/Send.svg"
-import twitter from "../assets/icons/Twitter.svg"
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob<Project>("./project/**/*.md")
@@ -40,32 +38,16 @@ const featuredProject = projects[0]!
           sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
         /> -->
         <h1 class="text-2xl lg:text-3xl mt-4 font-medium">
-          Software Engineer
-        </h1><p
-            class="desc text-black text-xl lg:text-2xl mt-6 mb-4 bg-[#82c982] py-1 px-2">
-            Tech and Code Enthusiast, Basketball Fanatic ⛹🏾
-          </p>
+          Software Engineer in New York
+        </h1>
       </div>
       <div class="grid gap-8">
         <section id="section-about">
           <h2 class="text-2xl lg:text-5xl mb-4 mt-4 font-bold text-center">About Me</h2>
           <p class="leading-8 mb-8">
-            I am a software engineer based in New York. I&apos;m passionate about solving problems and building innovative, user-friendly solutions. I have a thorough understanding of software development principles, experience in automation and testing, and proficiency in JavaScript, TypeScript, and Python. In my time as an engineer, I&apos;ve gained experience in multiple technologies including Node.js, Cypress, React, Next.js, Selenium, and Django. I&apos;m knowledgeable in a few different areas of development, such as managing relational and document databases, and building reliable backend services and APIs with GraphQL, Node.js, and Express. My strengths are my creativity, excellent communication skills, ability to both collaborate with and lead teams, and building projects from planning to production.
-          </p>
-          <p class="leading-8 mb-8">
-            I enjoy opportunities to try new
-            things, share ideas, and make connections. Science, technology,
-            programming, basketball, and cars are just a few of the things
-            that I'm passionate about. I love it when I get the chance to
-            explore how a new system, product, or device works. I started
-            sharing what I&#39ve learned so far and what I&#39m learning now on
+            Hi! I'm Ron and I enjoy opportunities to try new things, share ideas, solve problems and make connections. Science, technology, programming, basketball, and automobiles are just a few of the things that I'm passionate about. I love it when I get the chance to explore how a new system, or device works. I started sharing what I've learned so far and what I&#39m learning now on
             my
             <a href="/blog" rel="prefetch" class="underline">blog</a>.
-          </p>
-          <p class="text-center">
-            <a href="/about" class="button" id="about" rel="prefetch"
-              >more about me</a
-            >
           </p>
         </section>
         <section>
@@ -75,21 +57,11 @@ const featuredProject = projects[0]!
             <a href="/projects/" class="button" rel="prefetch">View All</a>
           </div>
         </section>
-        <section id="section-technology">
-          <h2 class="text-2xl lg:text-5xl mb-4 font-bold text-center">Technology</h2>
-          <p class="leading-8 mb-8">
-            I enjoy building and experimenting with developer tools,
-            programming languages, libraries and frameworks. Here are some of
-            the technologies that I have experience using for work, projects,
-            and open source.
-          </p>
-          <TechPreview />
-        </section>
         <section id="section-contact">
           <h2 class="text-2xl lg:text-5xl mb-4 font-bold text-center">Get In Touch</h2>
           <p>
             Building something special and want to chat? I would love to hear
-            about it! Send me a quick email or a DM on Twitter and we can
+            about it! Send me an email and we can
             schedule a time to talk.
           </p>
           <div class="flex items-center gap-4 mt-3">
@@ -107,23 +79,6 @@ const featuredProject = projects[0]!
               href="mailto:jeanfrancoisron@gmail.com"
               class="text-lg text-zinc-200 underline hover:text-slate-500 focus:text-slate-500"
               >jeanfrancoisron@gmail.com</a
-            >
-          </div>
-          <div class="flex items-center gap-4">
-            <span
-              class="w-9 h-9 flex items-center justify-center border-t border-zinc-700 rounded-full"
-              ><img
-                class="hover:animate-bounce-slow focus:animate-bounce-slow"
-                src={twitter}
-                alt="Twitter handle @ronjtech"
-                height={20}
-                width={20}
-              />
-            </span>
-            <a
-              href="https://twitter.com/ronjtech"
-              class="text-lg text-zinc-200 underline hover:text-slate-500 focus:text-slate-500"
-              >@ronjtech</a
             >
           </div>
         </section>
