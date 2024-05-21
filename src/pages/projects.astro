@@ -21,9 +21,9 @@ const projects = (await Astro.glob<Project>("./project/**/*.md"))
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="max-w-4xl mx-auto bg-[url('/src/assets/circuit-board.svg')]">
+  <body class="max-w-4xl mx-auto bg-[url('/src/assets/circuit-board.svg')] flex flex-col min-h-screen">
     <Header />
-    <main>
+    <main class="flex-grow">
       <div class="wrapper mx-auto px-4 max-w-2xl">
         <h2 class="my-8 text-4xl font-semibold">Work</h2>
         <div class="grid gap-12">
