@@ -65,14 +65,15 @@
 }
 
 body {
-  /* font-family: Verdana, sans-serif; */
+  /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
+  font-size: 1.3em;
   margin: auto;
-  padding: 18px;
+  padding: 2rem;
   text-align: left;
   background-color: var(--c-dark);
   word-wrap: break-word;
   overflow-wrap: break-word;
-  line-height: 1.5;
+  line-height: 1.5rem;
   color: var(--c-light);
 }
 h1,
