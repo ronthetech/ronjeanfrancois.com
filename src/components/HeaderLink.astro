@@ -10,7 +10,7 @@ const isActive = href === Astro.url.pathname.replace(/\/$/, "")
 	class:list={[
 		className,
 		{ active: isActive },
-		"text-xl inline-block py-0 px-2",
+		"text-xl inline-block py-0 px-2 hover:text-blue-500 hover:underline",
 	]}
 	{...props}>
 	<slot />
