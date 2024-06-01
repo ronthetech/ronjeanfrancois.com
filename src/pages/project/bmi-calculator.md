@@ -5,7 +5,7 @@ client:
 publishDate: 2023-02-04 12:00:00
 img: /assets/projects/bmi-calc/1.png
 description: |
-  The Body Mass Index (BMI) is a measurement of body fat using height and weight. To calculate BMI you would divide the body mass by the square of the body height. Or you can use the calculator below.
+  The Body Mass Index (BMI) is a measurement of body fat using height and weight. To calculate BMI you divide the body mass by the square of the height. Or you can use this calculator.
 tags:
   - javascript
   - typescript
