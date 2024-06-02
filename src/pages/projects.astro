@@ -1,9 +1,6 @@
 ---
-import BaseHead from "../components/BaseHead.astro"
-import Footer from "../components/Footer.astro"
-import Header from "../components/Header.astro"
 import PortfolioPreview from "../components/PortfolioPreview.astro"
-import { SITE_DESCRIPTION,SITE_TITLE } from "../config"
+import MainLayout from "../layouts/MainLayout.astro"
 import type { Project } from "../types"
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
@@ -16,20 +13,12 @@ const projects = (await Astro.glob<Project>("./project/**/*.md"))
   )
 ---
 
-<!DOCTYPE html>
-<html lang="en" class="font-mono">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="max-w-4xl mx-auto bg-[url('/src/assets/circuit-board.svg')] flex flex-col min-h-screen">
-    <Header />
-    <main class="flex-grow">
-      <div class="wrapper mx-auto px-4 max-w-2xl">
-        <h2 class="my-8 text-4xl font-semibold">Work</h2>
-        <div class="grid gap-12">
-          {projects.map((project) => <PortfolioPreview project={project} />)}
-        </div>
-        <!-- <ul>
+<MainLayout title="Projects">
+	<div class="wrapper mx-auto px-4 max-w-2xl">
+		<div class="grid gap-12">
+			{projects.map((project) => <PortfolioPreview project={project} />)}
+		</div>
+		<!-- <ul>
 					{
 						projects.map((post) => (
 							<li>
@@ -48,8 +37,5 @@ const projects = (await Astro.glob<Project>("./project/**/*.md"))
 						))
 					}
 				</ul> -->
-      </div>
-    </main>
-    <Footer />
-  </body>
-</html>
+	</div>
+</MainLayout>
