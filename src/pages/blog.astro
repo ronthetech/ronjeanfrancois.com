@@ -10,7 +10,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 ---
 
 <MainLayout title="Blog Posts">
-	<section>
+	<section class="wrapper mx-auto px-4 max-w-2xl">
 		<ul class="list-none p-[unset] flex flex-col gap-6">
 			{
 			posts.map((post) => (
